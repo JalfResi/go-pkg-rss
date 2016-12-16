@@ -27,7 +27,7 @@ package feeder
 
 import (
 	"fmt"
-	xmlx "github.com/jteeuwen/go-pkg-xmlx"
+	xmlx "github.com/JalfResi/go-pkg-xmlx"
 	"net/http"
 	"strconv"
 	"strings"
@@ -149,7 +149,7 @@ func (this *Feed) Fetch(uri string, charset xmlx.CharsetFunc) (err error) {
 //
 // The client parameter allows the use of arbitrary network connections, for
 // example the Google App Engine "URL Fetch" service.
-func (this *Feed) FetchClient(uri string, client *http.Client, charset xmlx.CharsetFunc) (err error) {
+func (this *Feed) FetchClient(uri string, client xmlx.HttpClient, charset xmlx.CharsetFunc) (err error) {
 	if !this.CanUpdate() {
 		return
 	}
